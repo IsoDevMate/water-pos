@@ -1,0 +1,175 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background-color: #020617; /* slate-950 */
+  color: #e5e7eb; /* slate-200 */
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 12px;
+  background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #000 100%);
+}
+
+.app > header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.app h1 {
+  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
+  margin: 0 0 4px;
+}
+
+.app header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #9ca3af; /* slate-400 */
+}
+
+main {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.9); /* slate-900 with opacity */
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.3); /* slate-400/30 */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  padding: 16px 18px;
+  backdrop-filter: blur(18px);
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  margin: 12px 0 6px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input,
+select {
+  background-color: #020617;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 8px 12px;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: #38bdf8; /* sky-400 */
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+}
+
+button {
+  border-radius: 999px;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease,
+    background-color 0.12s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
+}
+
+button.primary {
+  background: linear-gradient(135deg, #22c55e, #0ea5e9);
+  color: #020617;
+}
+
+button.outline {
+  background: transparent;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.info {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+}
+
+.info button {
+  margin-top: 6px;
+}
+
+.customer-summary p {
+  margin: 2px 0;
+  font-size: 0.85rem;
+}
+
+.orders-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orders-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  padding: 4px 0;
+}
+
+.error {
+  border-radius: 12px;
+  border: 1px solid rgba(248, 113, 113, 0.5); /* red-400 */
+  background: rgba(127, 29, 29, 0.4);
+  padding: 10px 12px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .app {
+    align-items: stretch;
+    padding: 16px 10px 32px;
+  }
+
+  .card {
+    padding: 14px 14px;
+  }
+}
